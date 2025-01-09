@@ -1,0 +1,208 @@
+/* Modern Dashboard Styles */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #64748b;
+    --success-color: #22c55e;
+    --error-color: #ef4444;
+    --background-color: #f8fafc;
+    --card-background: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-radius: 12px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+  
+  .dashboard-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .dashboard-header {
+    text-align: left;
+    padding: 1.5rem;
+    background: linear-gradient(to right, #2563eb, #3b82f6);
+    border-radius: var(--border-radius);
+    color: white;
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-header h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: white;
+  }
+  
+  .dashboard-header .user-info {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.975rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .dashboard-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0;
+    background-color: transparent;
+  }
+  
+  .dashboard-content > div {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .dashboard-content > div:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .dashboard-error {
+    text-align: center;
+    color: var(--error-color);
+    font-size: 1.1rem;
+    padding: 1rem;
+    background: #fef2f2;
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+  }
+  
+  .dashboard-loading {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    padding: 2rem;
+  }
+  
+  .recent-rentals {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+  }
+  
+  .recent-rentals h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .recent-rentals ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+  
+  .recent-rentals ul li {
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+  }
+  
+  .recent-rentals ul li:hover {
+    background-color: #f1f5f9;
+  }
+  
+  .recent-rentals .error-message {
+    color: var(--error-color);
+    padding: 0.75rem;
+    background: #fef2f2;
+    border-radius: 6px;
+  }
+  
+  .quick-access {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .quick-access h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .quick-access ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .quick-access ul li a {
+    display: block;
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 0.75rem 1rem;
+    background: var(--background-color);
+    border-radius: 6px;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  
+  .quick-access ul li a:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  /* Role-specific content styles */
+  .dashboard-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      margin: 1rem;
+      padding: 1rem;
+    }
+  
+    .dashboard-header .user-info {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .quick-access ul {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Utility classes */
+  .text-center { text-align: center; }
+  .text-error { color: var(--error-color); }
+  .text-primary { color: var(--primary-color); }
+  .text-secondary { color: var(--secondary-color); }
