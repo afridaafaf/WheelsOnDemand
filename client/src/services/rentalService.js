@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const rentCar = async (carId, rentalDetails) => {
     const token = localStorage.getItem("token");
-    const response = await axios.post(`http://localhost:5000/api/rentals/rent`, {
+    const response = await axios.post(`http://localhost:5002/api/rentals/rent`, {
         carId,
         ...rentalDetails
     }, {
@@ -17,7 +17,7 @@ export const rentCar = async (carId, rentalDetails) => {
 export const getRecentRentals = async () => {
     const token = localStorage.getItem("token");
     try {
-        const response = await axios.get("http://localhost:5000/api/rentals/recent", { // Corrected endpoint
+        const response = await axios.get("http://localhost:5002/api/rentals/recent", { // Corrected endpoint
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ export const getRecentRentals = async () => {
 export const searchVehicles = async (criteria) => {
     const token = localStorage.getItem("token");
     try {
-        const response = await axios.get('http://localhost:5000/api/vehicles/search', {
+        const response = await axios.get('http://localhost:5002/api/vehicles/search', {
             params: criteria,
             headers: {
                 Authorization: `Bearer ${token}`
@@ -48,7 +48,7 @@ export const searchVehicles = async (criteria) => {
 export const bookVehicle = async (vehicleId, startDate, endDate) => {
     const token = localStorage.getItem("token");
     try {
-        const response = await axios.post('http://localhost:5000/api/rentals/book', 
+        const response = await axios.post('http://localhost:5002/api/rentals/book', 
             {
                 vehicleId,
                 startDate,
