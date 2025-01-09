@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node server/app.js",
+    "client": "react-scripts start"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "jwt-decode": "^4.0.0"
+  }
+}
